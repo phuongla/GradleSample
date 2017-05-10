@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: . dependency-jars/amqp-client-4.1.0.jar dependency-jars/sl
+ f4j-api-1.7.21.jar
+Main-Class: GradleSample
+
