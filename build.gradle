@@ -27,10 +27,9 @@ dependencies {
 }
 
 
-task copyDependencies(type: Copy) {
-	println("----copy dependencies-------$buildDir")
-	
-	def toDir = "$buildDir/libs/dependency-jars"
+task copyDependencies(type: Copy) {	
+	def toDir = "/softs/deploy/dependency-jars"
+	println("----copy dependencies-------$toDir")
 	
 	file(toDir).mkdirs()
 	
@@ -49,7 +48,17 @@ jar {
 
 
 
+task copyJarToBin(type:Copy) {
+	
+	def jarPath = "${buildDir}/libs/GradleSample.jar"
+	println("----copy main jar-------$jar")
+   
+	from jar
+	into "/softs/deploy"    
+}
+
 
 jar.dependsOn copyDependencies
+build.dependsOn copyJarToBin 
 
 

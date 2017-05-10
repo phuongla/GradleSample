@@ -8,11 +8,13 @@ import com.rabbitmq.client.ConnectionFactory;
 public class QueueService {
 	
 	public QueueService() {
-		ConnectionFactory factory = new ConnectionFactory();
-		factory.setHost("localhost");
-
-		Connection connection;
+		ConnectionFactory factory = new ConnectionFactory();		
 		try {
+			
+			factory.setHost("localhost");
+
+			Connection connection;
+			
 			connection = factory.newConnection();
 
 			Channel channel = connection.createChannel();
